@@ -28,14 +28,9 @@ Write an efficient algorithm for the following assumptions:
 N is an integer within the range [1..2,147,483,647].
 
 
-*  ## OddOccurrencesInArray
+*  ## [OddOccurrencesInArray](https://github.com/aMalhotra19/CodilityChallenge/tree/main/OddOccurrencesInArray)
 Find value that occurs in odd number of elements.
-Task Score
-100%
-Correctness
-100%
-Performance
-100%
+
 Task description
 A non-empty array A consisting of N integers is given. The array contains an odd number of elements, and each element of the array can be paired with another element that has the same value, except for one element that is left unpaired.
 
