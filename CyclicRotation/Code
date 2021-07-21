@@ -1,0 +1,13 @@
+
+public func solution(_ A : inout [Int], _ K : Int) -> [Int] {
+    // If elements are less than or rorations are less than one, no change
+    if A.count < 2 || K < 1 {
+        return A
+    }   
+    // For K rotation, remove the last element from array and insert it at first index
+    for _ in 1...K {
+        let last = A.popLast()!
+        A.insert(last, at: 0)
+    }
+  return A
+}
