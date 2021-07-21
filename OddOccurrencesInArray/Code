@@ -1,0 +1,29 @@
+  public func solution(_ A : inout [Int]) -> Int {
+        // Sort the array so pairs will be sorted together
+        let sortedArray: [Int] = A.sorted()
+        
+        var oddNumber = 0
+        var jump = false
+        for (index, element) in sortedArray.enumerated() {
+            if jump == true { // If a pair is found, continue to next index
+                jump = false
+                continue
+            }
+            
+            // If Odd number is not found till last elemnt
+            // Last elemnt will be the odd number
+            if index == sortedArray.count - 1 {
+                return sortedArray[index]
+            }
+            
+            // Compare each element to the next element and mark jump to true for next iteration
+            if element == sortedArray[index + 1] {
+                jump = true
+                continue
+            }
+            
+            //Any elemnt whose adject next element is not same is an odd number
+            oddNumber = sortedArray[index]
+                
+        return oddNumber
+    }
