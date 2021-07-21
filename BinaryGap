@@ -1,0 +1,25 @@
+
+    public func solution(_ N : Int) -> Int {
+        // write your code in Swift 4.2.1 (Linux)
+        var counterZero = 0, counterOne = 0, maxValue = 0
+        // Get binary string
+        let binary = String(N, radix: 2)
+        
+        // If no 0`s or 1`s then binary gap is 0
+        // In case of only 2 elements ie 00, 11, 10, 01 binary gap is 0
+        if !binary.contains("0") || !binary.contains("1") || binary.count < 3 {
+            return 0
+        }
+        
+        for element in binary {
+            if element == "1" { // For each 1, reset 0`s counter, increase 1`s counter
+                maxValue = max(maxValue, counterZero)
+                counterZero = 0
+                counterOne += 1
+            } else {
+                counterZero += 1
+            }
+        }
+        // If 1`s is less than 2 then binary gap is zero
+        return counterOne < 2 ? 0 : maxValue
+    }
