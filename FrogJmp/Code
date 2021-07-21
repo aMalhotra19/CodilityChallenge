@@ -1,0 +1,19 @@
+public func solution(_ X : Int, _ Y : Int, _ D : Int) -> Int {
+    // write your code in Swift 4.2.1 (Linux)   
+    
+    // If start and end points are same, no jumps required
+    if X == Y {
+        return 0
+    }
+    
+    // Distance to be covered
+    let distance = Y - X 
+
+    // If distance can ve entirely covered in jumps i.e remainder is 0, then return (remaining Distance)/ (distance covered in each step)
+    // Else one more jump will be required
+    if distance % D == 0 {
+        return distance / D
+    } else {
+        return distance / D + 1
+    }
+}
