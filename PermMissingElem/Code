@@ -1,0 +1,25 @@
+import Foundation
+import Glibc
+
+// you can write to stdout for debugging purposes, e.g.
+// print("this is a debug message")
+
+
+public func solution(_ A : inout [Int]) -> Int {
+    // write your code in Swift 4.2.1 (Linux)
+    let a = A.sorted()
+    if a.count == 0 || a[0] != 1 {
+        return 1
+    }
+
+    for (index, element) in a.enumerated() {
+        if index == a.count - 1 {
+            return element + 1
+        }
+
+        if (element + 1 != a[index + 1]) && index < a.count {
+            return element + 1
+        }
+    }
+    return 1
+}
