@@ -1,0 +1,34 @@
+import Foundation
+import Glibc
+
+// you can write to stdout for debugging purposes, e.g.
+// print("this is a debug message")
+
+    public func solution(_ A : inout [Int]) -> Int {
+        // write your code in Swift 4.2.1 (Linux)
+        var minDistance = 0
+        var motorWayCity = 0
+        var distance = 0
+        
+        while motorWayCity < A.count - 1 {
+            
+            for (index, element) in A.enumerated() {
+                if index == A.count - 1 || motorWayCity == index {
+                    continue
+                }
+                if index <= motorWayCity {
+                    distance = distance + (A[motorWayCity] - element)
+                } else {
+                distance = distance + (A[A.count - 1] - element)
+                }
+            }
+            minDistance = minDistance == 0 ? distance : min(minDistance, distance)
+            motorWayCity += 1
+            distance = 0
+        }
+
+        if minDistance >= 4500000000 {
+            minDistance = minDistance % (1000000007)
+        }
+        return minDistance
+    }
