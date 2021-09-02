@@ -16,18 +16,24 @@ Examples:
 * With the motorway from the 0th city the travel times would be: 0 for the 0th city as it has a motorway, 7 for the 1st city and 3 for the 2nd city: that is 10 in total.
 * With the motorway from the 1st city the travel times would be: 4 for the 0th city, 0 for the 1st city and 3 for the 2nd city: that is 7 in total.
 * With the motorway from the 2nd city the travel times would be: 8 for the 0th city, 4 for the 1st city and 0 for the 2nd city: that is 12 in total.
-￼
+
+￼ ![fa6ccb32d8e903cdea4f3d7b9ad8e959](https://user-images.githubusercontent.com/35059078/131336836-3c5515fb-cdbb-4150-bbb5-3803e773fe13.png)
+
+
 2. If A = [5, 15], the function should return 0.
 We can only build a motorway from the 0th city to the 1st. Travel time from the city to the motorway is 0, so 0 is the answer.
-￼
+
+￼ ![5b4f3f8262daf72702354f3d32353981](https://user-images.githubusercontent.com/35059078/131336922-6b71614f-fa65-49a2-b087-2495b80da31e.png)
+
 3. If A = [2, 6, 7, 8, 12], the function should return 9.
 * With the motorway from the 0th city the total travel time is equal to 0 + 6 + 5 + 4 = 15.
 * With the motorway from the 1st city the total travel time is equal to 4 + 0 + 5 + 4 = 13.
 * With the motorway from the 2nd city the total travel time is equal to 5 + 1 + 0 + 4 = 10.
 * With the motorway from the 3rd city the total travel time is equal to 6 + 2 + 1 + 0 = 9.
 The answer is 9, because that is the minimum total time among all motorway placement possibilities.
-￼
-4. If N = 20 and A[K] = K * (5 * 107) for each K from 0 to 19, the function should return 499999972. The minimal total time among all motorway placement possibilities is 4500000000, whose remainder when divided by 109 + 7 is 499999972.
+
+￼ 
+4. If N = 20 and A[K] = K * (5 * 107) for each K from 0 to 19, the function should return 499999972. The minimal total time among all motorway placement possibilities is 4500000000, whose remainder when divided by 109 + 7 is 499999972.
 Write an efficient algorithm for the following assumptions:
 * N is an integer within the range [2..100,000];
 * each element of array A is an integer within the range [0..1,000,000,000];
