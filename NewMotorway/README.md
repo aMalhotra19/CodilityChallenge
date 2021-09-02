@@ -32,7 +32,8 @@ We can only build a motorway from the 0th city to the 1st. Travel time from the 
 * With the motorway from the 3rd city the total travel time is equal to 6 + 2 + 1 + 0 = 9.
 The answer is 9, because that is the minimum total time among all motorway placement possibilities.
 
-￼ 
+￼ ![ac5fb1b0850743041ab1d20a93f0f232](https://user-images.githubusercontent.com/35059078/131810442-463a68e0-05ab-4d9e-b288-224554c9cc36.png)
+
 4. If N = 20 and A[K] = K * (5 * 107) for each K from 0 to 19, the function should return 499999972. The minimal total time among all motorway placement possibilities is 4500000000, whose remainder when divided by 109 + 7 is 499999972.
 Write an efficient algorithm for the following assumptions:
 * N is an integer within the range [2..100,000];
