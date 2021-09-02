@@ -1,0 +1,23 @@
+public func solution(_ A : inout [Int]) -> Int {
+    // write your code in Swift 4.2.1 (Linux)
+
+    var sumTotal = 0
+    var counter = 1
+    for i in 0..<A.count  {
+        // Always keep counter 1 greater than top loop
+        counter = i + 1
+        while counter < A.count {
+            print(A[i], A[counter])
+            let firstNumber = getSum(of: A[i])
+            let SecondNumber = getSum(of: A[counter])
+
+    //If sum of any two number matches, add the respective numbers and save in sumTotal
+            if firstNumber == SecondNumber {
+                sumTotal = max(sumTotal, (A[i] + A[counter]))
+            }
+            counter += 1
+        }
+
+    }
+    return sumTotal > 0 ? sumTotal : -1
+}
