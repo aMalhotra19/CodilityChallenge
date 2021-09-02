@@ -1,0 +1,29 @@
+public func solution(_ N : Int, _ K : Int) -> String {
+    //get half string and then reverse
+    var halfStringLength = N % 2 == 0 ? N/2 : (N+1)/2
+    if halfStringLength < K {
+        return "Palindrom not possible"
+    }
+    
+    let letters = "abcdefghijklmnopqrstuvwxyz"
+    var generatedString = ""
+
+    var distinctCharacters = K
+    while halfStringLength > 0 {
+        guard let random = letters.randomElement() else {return ""}
+        if !generatedString.contains(random) && distinctCharacters > 0 {
+            generatedString.append(random)
+            halfStringLength -= 1
+            distinctCharacters -= 1
+        } else if generatedString.contains(random) {
+            generatedString.append(random)
+            halfStringLength -= 1
+        }
+    }
+    let reverseString = generatedString.reversed()
+    
+    if N % 2 == 0 {
+        return generatedString+reverseString
+    }
+    return generatedString+reverseString.dropFirst()
+}
