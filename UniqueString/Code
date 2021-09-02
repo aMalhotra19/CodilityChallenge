@@ -1,0 +1,49 @@
+
+   public func solution(_ S : inout String) -> Int {
+        // write your code in Swift 4.2.1 (Linux)
+        // when have only one letter return 1
+        if S.count == 1 {
+            return 1
+        }
+        var substrings = [String]()
+        
+        var stringVar = S
+        var j = 0
+        // Iterate through the string and add all possible substrings to array
+        for i in 0..<S.count - 1 {
+            while j < stringVar.count - 1 {
+                let substring = S[j..<S.count-i]
+                if substring.count > 1 {
+                    substrings.append(substring)
+                }
+                j += 1
+            }
+            // reduce the size of string after each complete iteration
+            _ = stringVar.popLast()
+            j = 0
+        }
+        // Sort to start from minimum length of string
+        substrings.sort(by:{$0.count < $1.count})
+        
+        // For each element remove it from the array and search if same lement exist
+        for (index, element) in substrings.enumerated() {
+            var subStringArray = substrings
+            subStringArray.remove(at: index)
+            if !subStringArray.contains(element) {
+                return element.count
+            }
+        }
+        
+        // If no unique string is available return -1
+        return -1
+    }
+
+}
+extension String {
+
+  subscript (r: Range<Int>) -> String {
+    let start = index(startIndex, offsetBy: r.lowerBound)
+    let end = index(startIndex, offsetBy: r.upperBound)
+    return String(self[start ..< end])
+  }
+}
